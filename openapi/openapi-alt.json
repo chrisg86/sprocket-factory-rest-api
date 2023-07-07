@@ -1,0 +1,300 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "description": "Rest API for managing sprocket and factory data.",
+    "version": "1.0.0",
+    "title": "Powerflex Sprocket/Factory REST API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": { "email": "apiteam@swagger.io" },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/license/mit/"
+    }
+  },
+  "tags": [
+    { "name": "Sprocket", "description": "A sprocket object" },
+    { "name": "Factory", "description": "A factory object" }
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:8000/api/v1",
+      "description": "Local Server"
+    }
+  ],
+  "paths": {
+    "/sprockets": {
+      "post": {
+        "tags": ["Sprocket"],
+        "summary": "Creates a new sprocket",
+        "description": "Creates a new sprocket",
+        "operationId": "createSprocket",
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "examples": {
+                "teeth": { "summary": "Teeth parameter", "value": 4 },
+                "pitch_diameter": {
+                  "summary": "Pitch diameter parameter",
+                  "value": 4
+                },
+                "outside_diameter": {
+                  "summary": "Outside diameter parameter",
+                  "value": 8
+                },
+                "pitch": { "summary": "Teeth parameter", "value": 4 }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Sprocket" }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing required parameter",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Sprocket" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sprockets/{id}": {
+      "get": {
+        "tags": ["Sprocket"],
+        "summary": "Find sprocket by ID",
+        "description": "Returns a single sprocket",
+        "operationId": "getSprocket",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of sprocket to return",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Sprocket" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid sprocket ID supplied"
+          },
+          "404": {
+            "description": "Sprocket not found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Sprocket"],
+        "summary": "Update a sprocket",
+        "description": "Updates a single sprocket",
+        "operationId": "updateSprocket",
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "examples": {
+                "teeth": { "summary": "Teeth parameter", "value": 4 },
+                "pitch_diameter": {
+                  "summary": "Pitch diameter parameter",
+                  "value": 4
+                },
+                "outside_diameter": {
+                  "summary": "Outside diameter parameter",
+                  "value": 8
+                },
+                "pitch": { "summary": "Teeth parameter", "value": 4 }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of sprocket to return",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Sprocket" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid sprocket ID supplied"
+          },
+          "404": {
+            "description": "Sprocket not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Sprocket"],
+        "summary": "Update a sprocket",
+        "description": "Updates a single sprocket",
+        "operationId": "updateSprocketPartial",
+        "requestBody": {
+          "content": {
+            "aplication/json": {
+              "examples": {
+                "teeth": { "summary": "Teeth parameter", "value": 4 },
+                "pitch_diameter": {
+                  "summary": "Pitch diameter parameter",
+                  "value": 4
+                },
+                "outside_diameter": {
+                  "summary": "Outside diameter parameter",
+                  "value": 8
+                },
+                "pitch": { "summary": "Teeth parameter", "value": 4 }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of sprocket to return",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Sprocket" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid sprocket ID supplied"
+          },
+          "404": {
+            "description": "Sprocket not found"
+          }
+        }
+      }
+    },
+    "/factories": {
+      "get": {
+        "tags": ["Factory"],
+        "summary": "Get all factories",
+        "description": "Get all factories",
+        "operationId": "getFactories",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Factories" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/factories/{id}": {
+      "get": {
+        "tags": ["Factory"],
+        "summary": "Get a factory",
+        "description": "Returns a single factory",
+        "operationId": "getFactory",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of factory to return",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Factory" }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid factory ID supplied"
+          },
+          "404": {
+            "description": "Factory not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Sprocket": {
+        "type": "object",
+        "required": ["teeth", "pitch_diameter", "outside_diameter", "pitch"],
+        "properties": {
+          "teeth": { "type": "integer", "format": "int64" },
+          "pitch_diameter": { "type": "integer", "format": "int64" },
+          "outside_diameter": { "type": "integer", "format": "int64" },
+          "pitch": { "type": "integer", "format": "int64" }
+        }
+      },
+      "Factory": {
+        "type": "object",
+        "properties": {
+          "factory": {
+            "type": "object",
+            "properties": {
+              "chart_data": {
+                "type": "object",
+                "properties": {
+                  "production_actual": { "type": "integer", "format": "int64", "default": 33 },
+                  "production_goal": { "type": "integer", "format": "int64", "default": 32 },
+                  "time": { "type": "integer", "format": "int64", "default": 1611194818 }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Factories": {
+        "type": "array",
+        "items": [
+          {
+            "$ref": "#/components/schemas/Factory"
+          }
+        ]
+      }
+    }
+  }
+}

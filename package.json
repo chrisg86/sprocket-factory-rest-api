@@ -1,0 +1,52 @@
+{
+  "name": "sprocket-factory-rest-api",
+  "version": "1.0.0",
+  "description": "Rest API for managing sprocket and factory data.",
+  "main": "build/src/server.js",
+  "scripts": {
+    "build": "tsc",
+    "server": "node build/server.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/src/server.js\"",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "Sprocket",
+    "Factory"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.4.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.2",
+    "@types/lodash": "^4.14.195",
+    "@types/node": "^20.3.3",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "concurrently": "^8.2.0",
+    "cypress": "^12.16.0",
+    "eslint": "^8.44.0",
+    "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.6.0",
+    "nodemon": "^2.0.22",
+    "superagent": "^8.0.9",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  }
+}
