@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "server": "node build/server.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/src/server.js\"",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/server.js\"",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "cypress:open": "cypress open"
