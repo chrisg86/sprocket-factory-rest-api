@@ -43,6 +43,8 @@ In case you want example data in the database, you can run `import_data.sh` in t
 - seed_factory_data.sql
 - seed_sprocket_types.sql
 
+I generated those two seed files using this repository [https://github.com/chrisg86/sprocket-factory-rest-api-tools](https://github.com/chrisg86/sprocket-factory-rest-api-tools)
+
 #### Run the dev server
 
 You might need to run `tsc` once in order to build the entrypoint for node before running the dev command.
