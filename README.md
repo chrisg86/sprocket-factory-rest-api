@@ -9,7 +9,7 @@ This is a REST API for handling Sprocket and Factory data.
 #### Clone the repository
 
 ```
-git clone xxx
+git clone https://github.com/chrisg86/sprocket-factory-rest-api.git
 ```
 
 #### Install dependencies
