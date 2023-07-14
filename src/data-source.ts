@@ -10,7 +10,7 @@ export const db = new DataSource({
   username: 'root',
   password: process.env.MYSQL_ROOT_PASSWORD,
   database: process.env.MYSQL_DB,
-  entities: ['build/src/entity/*.js'],
+  entities: ['build/entity/*.js'],
   logging: false,
   synchronize: true,
 });

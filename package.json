@@ -1,6 +1,6 @@
 {
   "name": "sprocket-factory-rest-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rest API for managing sprocket and factory data.",
   "main": "build/src/server.js",
   "scripts": {

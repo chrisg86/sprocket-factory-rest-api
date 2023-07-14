@@ -12,7 +12,7 @@ describe('DataSource', () => {
   it('sets up the correct data source', () => {
     expect(mockDataSource).toHaveBeenCalledWith({
       database: 'dummy-db',
-      entities: ['build/src/entity/*.js'],
+      entities: ['build/entity/*.js'],
       host: 'localhost',
       logging: false,
       password: 'dummy-pass',
