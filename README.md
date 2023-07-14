@@ -52,7 +52,7 @@ You might need to run `tsc` once in order to build the entrypoint for node befor
 (once)
 
 ```
-tsc
+npx tsc
 ```
 
 (when you have the build dir up and running)
